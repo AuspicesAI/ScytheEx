@@ -23,7 +23,7 @@ The ScytheEx User Interface (SUI) is a web-based interface that allows users to 
 
 The official documentation for ScytheEx is still being written.
 
-# Authors
+## Authors
 
 - OSSEC: Daniel Cid, Scott R. Shinn, and many others from the community
 - Elastic Stack (Elasticsearch, Logstash, Kibana)
