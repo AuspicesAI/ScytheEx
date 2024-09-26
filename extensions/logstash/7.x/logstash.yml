@@ -1,0 +1,43 @@
+#============================== Core Settings ===============================
+
+# The directory where Logstash will store persistent data
+path.data: ./data
+
+# Logstash log file location
+path.logs: ./logs
+
+#============================== Pipeline Settings ===========================
+
+# The number of worker threads for pipeline event processing.
+# Default is the number of available CPU cores.
+# pipeline.workers: 2
+
+# How many events to retrieve from inputs before sending them to filters+outputs
+# pipeline.batch.size: 125
+
+# Delay to wait before sending batches (in milliseconds)
+# pipeline.batch.delay: 50
+
+#============================== HTTP API Settings ===========================
+
+# Bind address for the Logstash monitoring API
+http.host: "0.0.0.0"
+
+# Port for the HTTP API
+http.port: 9600-9700
+
+#============================== Node Settings ===============================
+
+# Set the name of the Logstash node (can be useful for clustering and logs)
+node.name: "scytheex-logstash"
+
+#============================== Path Settings ===============================
+
+# The default location where Logstash configuration files will be loaded from.
+path.config: "./config/ossec-logstash.conf"
+
+#============================== Monitoring Settings =========================
+
+# Enable Logstash's internal metrics for monitoring/logging.
+# Default is true.
+xpack.monitoring.enabled: false

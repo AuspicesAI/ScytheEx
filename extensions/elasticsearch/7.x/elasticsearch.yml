@@ -1,0 +1,14 @@
+#============================== Elasticsearch ===============================
+node.name: scytheex-node-1
+cluster.name: scytheex-cluster
+
+#============================== Paths =======================================
+path.data: ./data
+path.logs: ./logs
+
+#============================== Network =====================================
+# network.host: 0.0.0.0
+http.port: 9200
+
+#============================== Discovery ===================================
+discovery.type: single-node

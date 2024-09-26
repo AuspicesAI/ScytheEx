@@ -1,0 +1,13 @@
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.17.9-linux-x86_64.tar.gz
+tar -xzf elasticsearch-7.17.9-linux-x86_64.tar.gz
+
+wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.17.9-linux-x86_64.tar.gz
+tar -xzf filebeat-7.17.9-linux-x86_64.tar.gz
+
+wget https://artifacts.elastic.co/downloads/kibana/kibana-7.17.9-linux-x86_64.tar.gz
+tar -xzf kibana-7.17.9-linux-x86_64.tar.gz
+
+NOT YET USED:
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.17.9-linux-x86_64.tar.gz
+tar -xzf logstash-7.17.9-linux-x86_64.tar.gz
+rm logstash-7.17.9-linux-x86_64.tar.gz

@@ -1,0 +1,57 @@
+{
+  "order": 0,
+  "index_patterns": ["scytheex-alerts-*", "scytheex-archives-*"],
+  "settings": {
+    "index.refresh_interval": "5s",
+    "index.number_of_shards": "3",
+    "index.number_of_replicas": "0",
+    "index.auto_expand_replicas": "0-1",
+    "index.mapping.total_fields.limit": 10000,
+    "index.query.default_field": [
+      "agent.id",
+      "agent.name",
+      "prediction_status",
+      "prediction",
+      "log_message",
+      "rule_id",
+      "rule_description",
+      "source.ip",
+      "destination.ip"
+    ]
+  },
+  "mappings": {
+    "properties": {
+      "prediction_status": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "prediction": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "log_message": {
+        "type": "text"
+      },
+      "rule_id": {
+        "type": "integer"
+      },
+      "rule_description": {
+        "type": "text"
+      },
+      "source.ip": {
+        "type": "ip"
+      },
+      "destination.ip": {
+        "type": "ip"
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+Create a script to tar -xzf the downloaded .tar.gz files then move configs to the correct location in each one and start the services as background processes.

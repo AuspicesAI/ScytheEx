@@ -1,0 +1,29 @@
+# ============================ Filebeat Inputs ==============================
+filebeat.inputs:
+  # OSSEC Alerts Input
+  - type: log
+    enabled: true
+    paths:
+      - /var/ossec/logs/alerts/alerts.log # Path to OSSEC/ScytheEx alerts.log
+    tags: ["ossec"] # Tags to identify OSSEC logs
+
+    # Multiline settings for OSSEC alerts
+    multiline.pattern: '^\\*\\* Alert ' # Match start of OSSEC alert log lines
+    multiline.negate: true
+    multiline.match: after # Combine subsequent lines until next match
+
+  # Syslog Input Example
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/syslog # Path to system logs
+    tags: ["syslog"] # Tags to identify syslog logs
+
+    # Multiline settings for syslog (if needed)
+    multiline.pattern: '^<\d{1,3}>'
+    multiline.negate: true
+    multiline.match: after # Combine multiline syslog entries
+
+# ============================ Logstash Output ==============================
+output.logstash:
+  hosts: ["localhost:5044"] # Send logs to Logstash on port 5044
