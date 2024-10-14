@@ -25,7 +25,7 @@ const SidebarComponent = ({ sections }) => {
     };
   };
   return (
-    <div className="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-blue-900 dark:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
+    <div className="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
       <div className="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
         <ul className="flex flex-col py-4 space-y-1">
           {sections.map((section, sectionIndex) => (
@@ -45,7 +45,7 @@ const SidebarComponent = ({ sections }) => {
                     onClick={
                       handleNavigation(item.href) || handleNavigation("/")
                     }
-                    className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6"
+                    className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-gray-800 pr-6 cursor-pointer"
                   >
                     <span className="inline-flex justify-center items-center ml-4">
                       <i className={`w-5 h-5 ${item.icon}`}></i>
@@ -103,9 +103,9 @@ const Sidebar = () => {
           badge: { text: "Updated", textColor: "text-green-600" },
         },
         {
-          title: "Network Monitoring",
+          title: "Network",
           icon: "fas fa-network-wired",
-          href: "/",
+          href: "/network",
           badge: { text: "New" },
         },
       ],
@@ -126,31 +126,60 @@ const Sidebar = () => {
           href: "/alerts",
         },
         {
-          title: "Investigation",
-          icon: "fas fa-search",
+          title: "Active Response",
+          icon: "fas fa-bolt",
           badge: { text: "New" },
           href: "/alerts",
         },
+        // {
+        //   title: "Investigation",
+        //   icon: "fas fa-search",
+        //   badge: { text: "New" },
+        //   href: "/alerts",
+        // },
       ],
     },
     {
       title: "Security Operations",
       items: [
         {
-          title: "Incidents/Threats",
-          icon: "fas fa-exclamation-triangle",
+          title: "Endpoints",
+          icon: "fas fa-laptop",
+          badge: { text: "New" },
+          href: "/alerts",
+        },
+        // {
+        //   title: "Threat Intelligence",
+        //   icon: "fas fa-shield-alt",
+        //   badge: { text: "New" },
+        //   href: "/alerts",
+        // },
+        // {
+        //   title: "Policy Management",
+        //   icon: "fas fa-cogs",
+        //   badge: { text: "New" },
+        //   href: "/alerts",
+        // },
+      ],
+    },
+    {
+      title: "Reports",
+      items: [
+        {
+          title: "Health",
+          icon: "fas fa-heart",
           badge: { text: "New" },
           href: "/alerts",
         },
         {
-          title: "Alerts",
-          icon: "fas fa-bell",
+          title: "Reports",
+          icon: "fas fa-file-alt",
           badge: { text: "New" },
           href: "/alerts",
         },
         {
-          title: "Investigation",
-          icon: "fas fa-search",
+          title: "Logs",
+          icon: "fas fa-book",
           badge: { text: "New" },
           href: "/alerts",
         },
@@ -159,8 +188,11 @@ const Sidebar = () => {
     {
       title: "Settings",
       items: [
-        { title: "Manage Agents", icon: "fas fa-plus", badge: { text: "New" } },
-        //{ title: "Profile", icon: "fas fa-user", badge: { text: "New" } },
+        {
+          title: "Manage Agents",
+          icon: "fas fa-server",
+          badge: { text: "New" },
+        },
         {
           title: "Config",
           icon: "fas fa-cog",

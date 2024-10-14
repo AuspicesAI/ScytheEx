@@ -75,7 +75,7 @@ const StatusSpan = ({ status }) => {
   return <span style={style}>{status}</span>;
 };
 
-export const DashboardCard = ({
+export const NetworkCard = ({
   title,
   value,
   icon,

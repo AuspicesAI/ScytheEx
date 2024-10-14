@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRedisSubscriber } from "../../RedisSubscriber";
+import { useRedisSubscriber } from "../../../RedisSubscriber";
 import { DashTable, DashboardCard } from "./DashboardComponents";
 import {
   DashboardCardData,
@@ -7,6 +7,7 @@ import {
   trafficColumns,
   subColumns,
 } from "./DashboardAssets";
+import OverviewPanel from "./OverviewPanel"; // Adjust the path as necessary
 
 function Dashboard() {
   const [rows, setRows] = useState(initialRows);
@@ -40,32 +41,9 @@ function Dashboard() {
           <DashboardCard key={index} {...data} />
         ))}
       </div>
-      <div className="my-4 md:my-6 mx-auto w-full">
-        <div className="flex flex-wrap">
-          <DashTable
-            title="Latest Traffic"
-            columns={trafficColumns}
-            data={rows}
-          />
-        </div>
-        <div className="flex flex-row justify-between gap-4">
-          <DashTable
-            title="Malicious Traffic"
-            columns={subColumns}
-            data={rows.filter(
-              (row) =>
-                row.status !== "Background" && row.status !== "LEGITIMATE"
-            )}
-          />
-          <DashTable
-            title="Benign Traffic"
-            columns={subColumns}
-            data={rows.filter(
-              (row) =>
-                row.status === "Background" || row.status === "LEGITIMATE"
-            )}
-          />
-        </div>
+      <div>
+        <h1 className="text-3xl font-bold">XDR Dashboard Overview</h1>
+        <OverviewPanel />
       </div>
     </div>
   );

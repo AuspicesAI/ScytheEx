@@ -13,7 +13,7 @@ export const initialRows = [
   // Add more initial rows here...
 ];
 
-export const DashboardCardData = [
+export const NetworkCardData = [
   {
     title: "Total Traffic",
     value: "350,897",

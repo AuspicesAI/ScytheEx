@@ -6,6 +6,7 @@ const Navbar = lazy(() => import("./components/Navbar"));
 const Sidebar = lazy(() => import("./components/Sidebar"));
 const ConfigEditor = lazy(() => import("./pages/config-editor/ConfigEditor"));
 const Alerts = lazy(() => import("./pages/alerts/Alerts"));
+const Network = lazy(() => import("./pages/monitoring/network/Network"));
 
 const AppRouter = () => {
   return (
@@ -28,6 +29,7 @@ const AppRouter = () => {
               <Route path="/" element={<App />} />
               <Route path="/config-editor" element={<ConfigEditor />} />
               <Route path="/alerts" element={<Alerts />} />
+              <Route path="/network" element={<Network />} />
             </Routes>
           </div>
         </div>
