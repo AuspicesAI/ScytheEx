@@ -63,13 +63,20 @@ endif
 
 OSSEC_LDFLAGS=${LDFLAGS} -lm
 
+OSSEC_LDFLAGS+=-lpcap
+
+OSSEC_CFLAGS+=${DEFINES} -Wall -Wextra -I./ -I./headers/
+ifneq (${USE_LIBCAP},no)
+    OSSEC_CFLAGS+=-I/usr/include
+endif
+
 ifneq (${TARGET},winagent)
 ifeq (${uname_S},Linux)
-		DEFINES+=-DINOTIFY_ENABLED
-		OSSEC_LDFLAGS+=-lpthread
-ifeq (${USE_SYSTEMD},yes)
-		DEFINES+=-DHAVE_SYSTEMD
-		OSSEC_LDFLAGS+=-lsystemd
+    DEFINES+=-DINOTIFY_ENABLED
+    OSSEC_LDFLAGS+=-lpthread
+    ifeq (${USE_SYSTEMD},yes)
+        DEFINES+=-DHAVE_SYSTEMD
+        OSSEC_LDFLAGS+=-lsystemd
 endif
 #		DEFINES+=-DUSE_MAGIC
 #		OSSEC_LDFLAGS+=-lmagic
