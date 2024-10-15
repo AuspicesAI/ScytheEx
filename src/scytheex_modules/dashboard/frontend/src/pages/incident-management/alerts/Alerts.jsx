@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRedisSubscriber } from "../../RedisSubscriber";
+import { useRedisSubscriber } from "../../../RedisSubscriber";
 import { AlertTable, AlertsCard } from "./AlertsComponents";
 import { AlertCardData, AlertTableColumns } from "./AlertsAssets";
 

@@ -129,7 +129,7 @@ const Sidebar = () => {
           title: "Active Response",
           icon: "fas fa-bolt",
           badge: { text: "New" },
-          href: "/alerts",
+          href: "/active-response",
         },
         // {
         //   title: "Investigation",
@@ -162,45 +162,45 @@ const Sidebar = () => {
     //     },
     //   ],
     // },
-    {
-      title: "Reports",
-      items: [
-        {
-          title: "Health",
-          icon: "fas fa-heart",
-          badge: { text: "New" },
-          href: "/alerts",
-        },
-        // {
-        //   title: "Reports",
-        //   icon: "fas fa-file-alt",
-        //   badge: { text: "New" },
-        //   href: "/alerts",
-        // },
-        {
-          title: "Logs",
-          icon: "fas fa-book",
-          badge: { text: "New" },
-          href: "/alerts",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      items: [
-        // {
-        //   title: "Manage Agents",
-        //   icon: "fas fa-server",
-        //   badge: { text: "New" },
-        // },
-        {
-          title: "Config",
-          icon: "fas fa-cog",
-          badge: { text: "New" },
-          href: "/config-editor",
-        },
-      ],
-    },
+    // {
+    //   title: "Reports",
+    //   items: [
+    //     {
+    //       title: "Health",
+    //       icon: "fas fa-heart",
+    //       badge: { text: "New" },
+    //       href: "/alerts",
+    //     },
+    //     {
+    //       title: "Reports",
+    //       icon: "fas fa-file-alt",
+    //       badge: { text: "New" },
+    //       href: "/alerts",
+    //     },
+    //     {
+    //       title: "Logs",
+    //       icon: "fas fa-book",
+    //       badge: { text: "New" },
+    //       href: "/alerts",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Settings",
+    //   items: [
+    //     {
+    //       title: "Manage Agents",
+    //       icon: "fas fa-server",
+    //       badge: { text: "New" },
+    //     },
+    //     {
+    //       title: "Config",
+    //       icon: "fas fa-cog",
+    //       badge: { text: "New" },
+    //       href: "/config-editor",
+    //     },
+    //   ],
+    // },
   ];
 
   return <SidebarComponent sections={sections} />;

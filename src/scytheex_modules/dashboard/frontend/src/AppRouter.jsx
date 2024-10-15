@@ -5,8 +5,11 @@ const App = lazy(() => import("./App"));
 const Navbar = lazy(() => import("./components/Navbar"));
 const Sidebar = lazy(() => import("./components/Sidebar"));
 const ConfigEditor = lazy(() => import("./pages/config-editor/ConfigEditor"));
-const Alerts = lazy(() => import("./pages/alerts/Alerts"));
+const Alerts = lazy(() => import("./pages/incident-management/alerts/Alerts"));
 const Network = lazy(() => import("./pages/monitoring/network/Network"));
+const ActiveResponse = lazy(() =>
+  import("./pages/incident-management/health/ActiveResponse")
+);
 
 const AppRouter = () => {
   return (
@@ -30,6 +33,7 @@ const AppRouter = () => {
               <Route path="/config-editor" element={<ConfigEditor />} />
               <Route path="/alerts" element={<Alerts />} />
               <Route path="/network" element={<Network />} />
+              <Route path="/active-response" element={<ActiveResponse />} />
             </Routes>
           </div>
         </div>

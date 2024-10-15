@@ -34,8 +34,8 @@ function Network() {
   }, [redisRows]);
 
   return (
-    <div className="relative py-8">
-      <div className="flex flex-wrap">
+    <div className="relative py-8 px-6">
+      <div className="flex flex-row gap-4">
         {NetworkCardData.map((data, index) => (
           <NetworkCard key={index} {...data} />
         ))}
