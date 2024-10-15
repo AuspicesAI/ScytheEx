@@ -113,12 +113,12 @@ const Sidebar = () => {
     {
       title: "Incident Management",
       items: [
-        {
-          title: "Incidents/Threats",
-          icon: "fas fa-exclamation-triangle",
-          badge: { text: "New" },
-          href: "/alerts",
-        },
+        // {
+        //   title: "Incidents/Threats",
+        //   icon: "fas fa-exclamation-triangle",
+        //   badge: { text: "New" },
+        //   href: "/alerts",
+        // },
         {
           title: "Alerts",
           icon: "fas fa-bell",
@@ -139,29 +139,29 @@ const Sidebar = () => {
         // },
       ],
     },
-    {
-      title: "Security Operations",
-      items: [
-        {
-          title: "Endpoints",
-          icon: "fas fa-laptop",
-          badge: { text: "New" },
-          href: "/alerts",
-        },
-        // {
-        //   title: "Threat Intelligence",
-        //   icon: "fas fa-shield-alt",
-        //   badge: { text: "New" },
-        //   href: "/alerts",
-        // },
-        // {
-        //   title: "Policy Management",
-        //   icon: "fas fa-cogs",
-        //   badge: { text: "New" },
-        //   href: "/alerts",
-        // },
-      ],
-    },
+    // {
+    //   title: "Security Operations",
+    //   items: [
+    //     {
+    //       title: "Endpoints",
+    //       icon: "fas fa-laptop",
+    //       badge: { text: "New" },
+    //       href: "/alerts",
+    //     },
+    //     {
+    //       title: "Threat Intelligence",
+    //       icon: "fas fa-shield-alt",
+    //       badge: { text: "New" },
+    //       href: "/alerts",
+    //     },
+    //     {
+    //       title: "Policy Management",
+    //       icon: "fas fa-cogs",
+    //       badge: { text: "New" },
+    //       href: "/alerts",
+    //     },
+    //   ],
+    // },
     {
       title: "Reports",
       items: [
@@ -171,12 +171,12 @@ const Sidebar = () => {
           badge: { text: "New" },
           href: "/alerts",
         },
-        {
-          title: "Reports",
-          icon: "fas fa-file-alt",
-          badge: { text: "New" },
-          href: "/alerts",
-        },
+        // {
+        //   title: "Reports",
+        //   icon: "fas fa-file-alt",
+        //   badge: { text: "New" },
+        //   href: "/alerts",
+        // },
         {
           title: "Logs",
           icon: "fas fa-book",
@@ -188,11 +188,11 @@ const Sidebar = () => {
     {
       title: "Settings",
       items: [
-        {
-          title: "Manage Agents",
-          icon: "fas fa-server",
-          badge: { text: "New" },
-        },
+        // {
+        //   title: "Manage Agents",
+        //   icon: "fas fa-server",
+        //   badge: { text: "New" },
+        // },
         {
           title: "Config",
           icon: "fas fa-cog",

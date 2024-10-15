@@ -2,12 +2,12 @@ export const DashTable = ({ title, columns = [], data = [] }) => {
   // Add "ID" column and Status column to columns array
   const modifiedColumns = [
     { header: "ID", key: "id" },
+    { header: "Severity", key: "severity" },
     ...columns,
-    { header: "Status", key: "status" },
   ];
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full">
       <div className="relative flex flex-col min-w-0 break-words w-full mb-8 shadow-lg rounded-lg bg-gray-900 text-blueGray-700">
         <div className="px-6 py-4 border-0">
           <div className="flex flex-wrap items-center">
@@ -36,6 +36,11 @@ export const DashTable = ({ title, columns = [], data = [] }) => {
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     <div className="flex items-center">{row.id}</div>
                   </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    <div className="flex items-center">
+                      <StatusSpan status={row.severity} />
+                    </div>
+                  </td>
                   {columns.map((column, colIndex) => (
                     <td
                       key={colIndex}
@@ -44,11 +49,6 @@ export const DashTable = ({ title, columns = [], data = [] }) => {
                       <div className="flex items-center">{row[column.key]}</div>
                     </td>
                   ))}
-                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div className="flex items-center">
-                      <StatusSpan status={row.status} />
-                    </div>
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -83,7 +83,7 @@ export const DashboardCard = ({
   changeType,
 }) => {
   return (
-    <div className="w-full lg:w-6/12 xl:w-1/3 px-4">
+    <div className="w-full lg:w-6/12 xl:w-1/3">
       <div className="relative flex flex-col min-w-0 break-words bg-gray-900 rounded-lg mb-6 xl:mb-0 shadow-lg">
         <div className="flex-auto p-4">
           <div className="flex flex-wrap">

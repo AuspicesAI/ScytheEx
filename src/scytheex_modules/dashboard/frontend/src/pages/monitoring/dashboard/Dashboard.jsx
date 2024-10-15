@@ -7,7 +7,9 @@ import {
   trafficColumns,
   subColumns,
 } from "./DashboardAssets";
-import OverviewPanel from "./OverviewPanel"; // Adjust the path as necessary
+import AlertsPanel from "./AlertsPanel"; // Adjust the path as necessary
+import NetworkPanel from "./NetworkPanel";
+import DeviceHealth from "./DeviceHealth";
 
 function Dashboard() {
   const [rows, setRows] = useState(initialRows);
@@ -35,15 +37,21 @@ function Dashboard() {
   }, [redisRows]);
 
   return (
-    <div className="relative py-8">
-      <div className="flex flex-wrap">
+    <div className="relative px-4 py-8">
+      <h1 className="text-3xl font-bold mb-4">XDR Dashboard Overview</h1>
+      <div className="flex flex-row gap-4 py-4">
         {DashboardCardData.map((data, index) => (
           <DashboardCard key={index} {...data} />
         ))}
       </div>
-      <div>
-        <h1 className="text-3xl font-bold">XDR Dashboard Overview</h1>
-        <OverviewPanel />
+      <div className="py-4">
+        <AlertsPanel />
+      </div>
+      <div className="py-4">
+        <NetworkPanel />
+      </div>
+      <div className="py-4">
+        <DeviceHealth />
       </div>
     </div>
   );
