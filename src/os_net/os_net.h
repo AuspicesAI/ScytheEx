@@ -11,19 +11,19 @@
  * APIs for many network operations
  */
 
+#include <pcap.h>
 #include "headers/shared.h"
 #include "config/client-config.h"
 extern agent *os_net_agt;
 #ifdef WIN32
 #ifndef AI_ADDRCONFIG
-#define AI_ADDRCONFIG   0x0400
+#define AI_ADDRCONFIG 0x0400
 #endif
 #ifndef AI_V4MAPPED
-#define AI_V4MAPPED     0x0800
+#define AI_V4MAPPED 0x0800
 #endif
 typedef unsigned short int sa_family_t;
 #endif /* WIN32 */
-
 
 #ifndef __OS_NET_H
 #define __OS_NET_H
@@ -36,7 +36,7 @@ typedef uint32_t u_int32_t;
 
 #ifndef WIN32
 #include <imsg.h>
-#endif //WIN32
+#endif // WIN32
 
 /*
  * OSNetInfo is used to exchange a set of bound sockets for use with the
@@ -44,13 +44,14 @@ typedef uint32_t u_int32_t;
  * This allows you to support IPv4 and IPv6 simultaneously.
  */
 
-typedef struct _OSNetInfo {
-  fd_set fdset;                         /* set of sockets used by select ()*/
-  int fdmax;                            /* fd max socket for select() */
-  int fds[FD_SETSIZE];                  /* array of bound sockets for send() */
-  int fdcnt;                            /* number of sockets in array */
-  int status;                           /* return status (-1 is error) */
-  int retval;                           /* return value (additional info) */
+typedef struct _OSNetInfo
+{
+  fd_set fdset;        /* set of sockets used by select ()*/
+  int fdmax;           /* fd max socket for select() */
+  int fds[FD_SETSIZE]; /* array of bound sockets for send() */
+  int fdcnt;           /* number of sockets in array */
+  int status;          /* return status (-1 is error) */
+  int retval;          /* return value (additional info) */
 } OSNetInfo;
 
 /*
@@ -110,12 +111,10 @@ int OS_SendUDPbySize(int socket, int size, const char *msg) __attribute__((nonnu
  */
 char *OS_GetHost(const char *host, unsigned int attempts);
 
-
-/* satop 
+/* satop
  * Convert a sockaddr to a printable address.
  */
 int satop(struct sockaddr *sa, char *dst, socklen_t size);
-
 
 /* Close a network socket
  * Returns 0 on success, else -1 or SOCKET_ERROR
@@ -125,5 +124,7 @@ int OS_CloseSocket(int socket);
 /* Set a socket to be non-blocking */
 int setnonblock(int fd);
 
-#endif /* __OS_NET_H */
+static void packet_handler(uint8_t *args, const struct pcap_pkthdr *header, const uint8_t *packet);
+static void start_packet_capture(const char *device);
 
+#endif /* __OS_NET_H */
